@@ -6,6 +6,15 @@ import { callApi } from "../api"
 class LEDComponent extends Component {
 
     switchLED = (state) => {
+        let img = document.getElementById("ledImage");
+
+        if (state === 1) {
+            img.src = require("../images/ledOn.png")
+        }
+        else {
+            img.src = require("../images/led.png")
+        }
+
         callApi(
             `switchLED/${state}`,
             null,
