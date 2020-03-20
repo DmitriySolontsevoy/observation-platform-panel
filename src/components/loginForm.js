@@ -58,7 +58,7 @@ class LoginForm extends Component {
         return (
             <>
                 <br /><br />
-                <div className="myBox">
+                    <div className="myBox">
                     <form>
                         <div className="form-group">
                             <label>Username</label>

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import "../css/bootstrap.min.css"
 import "../css/App.css"
-import { throwStatement } from "@babel/types";
 
 class LogoutComponent extends Component {
     
