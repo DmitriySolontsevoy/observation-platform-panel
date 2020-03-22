@@ -3,7 +3,8 @@ import "./css/App.css"
 import LoginForm from "./components/loginForm"
 import LEDComponent from "./components/ledComponent"
 import ServoComponent from "./components/servoComponent"
-import LogoutComponent from "./components/logoutComponent.js"
+import LogoutComponent from "./components/logoutComponent"
+import CameraComponent from "./components/cameraComponent"
 
 class App extends Component {
 
@@ -22,7 +23,12 @@ class App extends Component {
                 ? <LoginForm parentCallback = {this.callback} dataFromParent = {this.state}/>
                 : null}
             {this.state.currentUserRole === "admin"
-                ? <> <LEDComponent /> <ServoComponent /> <LogoutComponent parentCallback = {this.callback} dataFromParent = {this.state}/> </>
+                ? <> 
+                    <LEDComponent />
+                    <ServoComponent />
+                    <CameraComponent />
+                    <LogoutComponent parentCallback = {this.callback} dataFromParent = {this.state}/>
+                  </>
                 : null}            
           </>
       );

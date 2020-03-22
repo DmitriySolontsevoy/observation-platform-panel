@@ -15,7 +15,10 @@ class LogoutComponent extends Component {
 
     render() {
         return <>
-            <span onClick={this.clearStorage}>Logout</span>
+            <div>
+                <br />
+                <span onClick={this.clearStorage}>Logout</span>
+            </div>
         </>
     }
 }

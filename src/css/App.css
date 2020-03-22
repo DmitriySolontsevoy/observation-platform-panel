@@ -54,7 +54,12 @@ input[type='range'] {
   margin: 0 4px;
 }
 
+input[type='text'] {
+  margin: 0 5px;
+}
+
 #ledImage {
+  display: inline-block;
   height: 364px;
 }
 
@@ -79,4 +84,16 @@ span {
 span:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+#cameraBox {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  display: inline-block;
+  width: 96.6%;
+}
+
+.ledInnerBlock {
+  vertical-align: middle;
+  display: inline-block;
 }

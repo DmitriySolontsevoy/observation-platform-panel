@@ -24,12 +24,12 @@ class ServoComponent extends Component {
                 <div className="servoInnerBlock">
                     <img id="servoImage" src={require("../images/sg90.png")} />
                     0°<input id='range1' type="range" max="180"/>180°<br />
-                    <input type="button" value="Rotate" onClick={() => this.btnClick('range1', "rotateX/")}/>
+                    <input className="btn btn-primary" type="button" value="Rotate" onClick={() => this.btnClick('range1', "rotateX/")}/>
                 </div>
                 <div className="servoInnerBlock">
                     <img id="servoImage" src={require("../images/sg90.png")} />
                     0°<input id='range2' type="range" max="90"/>90°<br />
-                    <input type="button" value="Rotate" onClick={() => this.btnClick('range2', "rotateY/")}/>
+                    <input className="btn btn-primary" type="button" value="Rotate" onClick={() => this.btnClick('range2', "rotateY/")}/>
                 </div>   
             </div>
         </>
