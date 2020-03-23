@@ -1,6 +1,6 @@
 #root {
   background-color: lightgrey;
-  height: 100vh;
+  height: 100%;
   text-align: center;
 }
 
@@ -27,23 +27,23 @@ h1 {
   font-weight: bolder;
 }
 
-#ledBox {
+.standardBox {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 30px;
+  background-color: white;
+  text-align: center;
+}
+
+#ledBox {
   display: inline-block;
   vertical-align: middle;
   width: 30%;
-  margin: 30px;
-  background-color: white;
 }
 
 #servoBox {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
   display: inline-block;
   vertical-align: middle;
   width: 63.4%;
-  margin: 30px;
-  background-color: white;
 }
 
 input[type='radio'] {
@@ -54,7 +54,7 @@ input[type='range'] {
   margin: 0 4px;
 }
 
-input[type='text'] {
+.ledBlinkInput {
   margin: 0 5px;
 }
 
@@ -66,14 +66,14 @@ input[type='text'] {
 .servoInnerBlock {
   font-weight: bolder;
   text-align: center;
-  width: 28%;
+  width: 24%;
   display: inline-block;
   padding: 20px;
-  margin: 0 6%;
+  margin: 0 10%;
 }
 
 #servoImage {
-  width: 291.5px;
+  width: 256px;
 }
 
 span {
@@ -87,8 +87,16 @@ span:hover {
 }
 
 #cameraBox {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: white;
+  display: inline-block;
+  width: 96.6%;
+}
+
+#gpsBox {
+  display: inline-block;
+  width: 96.6%;
+}
+
+#compassBox {
   display: inline-block;
   width: 96.6%;
 }

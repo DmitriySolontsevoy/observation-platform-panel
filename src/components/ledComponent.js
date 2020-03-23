@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import "../css/bootstrap.min.css"
 import "../css/App.css"
-import { callApi } from "../api"
+import { APIHandler } from "../api/apiHandler"
 
 class LEDComponent extends Component {
 
@@ -15,7 +15,7 @@ class LEDComponent extends Component {
             img.src = require("../images/led.png")
         }
 
-        callApi(
+        APIHandler.callApi(
             `switchLED/${state}`,
             null,
             "PUT",
@@ -51,7 +51,7 @@ class LEDComponent extends Component {
             }, period_duration * 500 + i * period_duration * 1000)
         }
 
-        callApi(
+        APIHandler.callApi(
             "tickLED",
             JSON.stringify({period_duration, period_count}),
             "POST",
@@ -62,7 +62,7 @@ class LEDComponent extends Component {
 
     render() {
         return <>
-            <div id="ledBox">
+            <div id="ledBox" className="standardBox">
                 <div className="header">LED</div>
                 <div className="ledInnerBlock"> 
                     <img id="ledImage" src={require("../images/led.png")} />
@@ -75,8 +75,8 @@ class LEDComponent extends Component {
                     <br />
                     <hr />
                     <br />
-                    Period duration (s):<input type="text" id="period_duration" size="5"/>
-                    Repeats:<input type="text" id="period_count" size="2"/>
+                    Period duration (s):<input className="ledBlinkInput" type="text" id="period_duration" size="5"/>
+                    Repeats:<input className="ledBlinkInput" type="text" id="period_count" size="2"/>
                     <br /><br />
                     <button className="btn btn-primary" onClick={this.blink}>Blink</button>
                 </div>

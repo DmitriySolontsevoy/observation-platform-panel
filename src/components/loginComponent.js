@@ -1,13 +1,15 @@
 import React, { Component } from "react"
 import "../css/bootstrap.min.css"
 import "../css/App.css"
-import { callApi } from "../api/index"
+import { APIHandler } from "../api/apiHandler"
 
-class LoginForm extends Component {
+class LoginComponent extends Component {
     
     sendData = () => this.props.parentCallback(this.props.dataFromParent);
 
-    login = () => {
+    login = (e) => {
+        e.preventDefault();
+
         document.getElementById("logLogin").style.borderColor = "lightgrey";
         document.getElementById("logPassword").style.borderColor = "lightgrey";
 
@@ -45,7 +47,13 @@ class LoginForm extends Component {
     }
 
     authorizeUser = (username, password) => {
-        callApi(
+        let host = document.getElementById("logHost").value
+        let port = document.getElementById("logPort").value
+
+        localStorage.setItem("host", host)
+        localStorage.setItem("port", port)
+
+        APIHandler.callApi(
             "login",
             JSON.stringify({username, password}),
             "POST",
@@ -60,6 +68,11 @@ class LoginForm extends Component {
                 <br /><br />
                     <div className="myBox">
                     <form>
+                    <div className="form-group">
+                            <label>Host and port</label>
+                            <input maxLength="30" type="text" className="form-control" id="logHost" placeholder="Enter host" /><br />
+                            <input maxLength="5" type="text" className="form-control" id="logPort" placeholder="Enter port" />
+                        </div>
                         <div className="form-group">
                             <label>Username</label>
                             <input maxLength="30" type="text" className="form-control" id="logLogin" placeholder="Enter your username" />
@@ -76,4 +89,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm;
+export default LoginComponent;

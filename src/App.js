@@ -1,14 +1,16 @@
 import React, { Component } from "react"
 import "./css/App.css"
-import LoginForm from "./components/loginForm"
+import LoginComponent from "./components/loginComponent"
 import LEDComponent from "./components/ledComponent"
 import ServoComponent from "./components/servoComponent"
 import LogoutComponent from "./components/logoutComponent"
 import CameraComponent from "./components/cameraComponent"
+import CompassComponent from "./components/compassComponent"
+import GPSComponent from "./components/gpsComponent"
 
 class App extends Component {
 
-  state = { currentUserRole: localStorage.getItem('role') || ""}
+  state = { currentUserRole: localStorage.getItem('role') || "" }
 
   callback = (childData) => this.setState(childData);
 
@@ -20,15 +22,19 @@ class App extends Component {
             </div>
 
             {!this.state.currentUserRole
-                ? <LoginForm parentCallback = {this.callback} dataFromParent = {this.state}/>
+                ? <LoginComponent parentCallback = {this.callback} dataFromParent = {this.state}/>
                 : null}
             {this.state.currentUserRole === "admin"
                 ? <> 
                     <LEDComponent />
                     <ServoComponent />
                     <CameraComponent />
-                    <LogoutComponent parentCallback = {this.callback} dataFromParent = {this.state}/>
+                    <CompassComponent />
+                    <GPSComponent />
                   </>
+                : null}
+            {this.state.currentUserRole
+                ? <LogoutComponent parentCallback = {this.callback} dataFromParent = {this.state}/>
                 : null}            
           </>
       );
