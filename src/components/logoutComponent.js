@@ -1,12 +1,21 @@
 import React, { Component } from "react"
 import "../css/bootstrap.min.css"
 import "../css/App.css"
+import { APIHandler } from "../api/apiHandler";
 
 class LogoutComponent extends Component {
     
     sendData = () => this.props.parentCallback(this.props.dataFromParent);
 
-    clearStorage = () => {
+    clearStorageAndLogout = () => {
+        APIHandler.callApi(
+            "logout",
+            null,
+            "DELETE",
+            null,
+            localStorage.getItem("token")
+        )
+
         localStorage.removeItem("token")
         localStorage.removeItem("role")
         this.props.dataFromParent.currentUserRole = ""
@@ -17,7 +26,7 @@ class LogoutComponent extends Component {
         return <>
             <div>
                 <br />
-                <span onClick={this.clearStorage}>Logout</span>
+                <span onClick={this.clearStorageAndLogout}>Logout</span>
             </div>
         </>
     }

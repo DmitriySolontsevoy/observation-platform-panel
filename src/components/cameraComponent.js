@@ -4,11 +4,16 @@ import "../css/App.css"
 
 class CameraComponent extends Component {
 
+    getHost = () => { 
+        return "http://" + localStorage.getItem("host") + ":8080/stream_simple.html";
+    }
+
     render() {
         return <>
             <div id="cameraBox" className="standardBox">
                 <div className="header">Camera Feed</div>
-                <br /><br /><br /><br />
+                    <iframe src={this.getHost()}></iframe>
+                <br /><br /><br />
             </div>
         </>
     }

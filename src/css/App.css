@@ -17,6 +17,7 @@
   text-align: center;
   width: 100%;
   font-size: 60px;
+  margin-bottom: 30px;
   background-color: #345678;
   color: white;
   font-weight: bold;
@@ -104,4 +105,11 @@ span:hover {
 .ledInnerBlock {
   vertical-align: middle;
   display: inline-block;
+}
+
+iframe {
+  height: 500px; 
+  width: 700px;
+  border: 0;
+  transform: rotate(180deg);
 }

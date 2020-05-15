@@ -31,10 +31,14 @@ class App extends Component {
                     <CameraComponent />
                     <CompassComponent />
                     <GPSComponent />
+                    <LogoutComponent parentCallback = {this.callback} dataFromParent = {this.state}/>
                   </>
                 : null}
-            {this.state.currentUserRole
-                ? <LogoutComponent parentCallback = {this.callback} dataFromParent = {this.state}/>
+            {this.state.currentUserRole === "user"
+                ? <>
+                    <CameraComponent />
+                    <LogoutComponent parentCallback = {this.callback} dataFromParent = {this.state}/>
+                  </>
                 : null}            
           </>
       );
