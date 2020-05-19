@@ -12,8 +12,7 @@ class CameraComponent extends Component {
         return <>
             <div id="cameraBox" className="standardBox">
                 <div className="header">Camera Feed</div>
-                    <iframe src={this.getHost()}></iframe>
-                <br /><br /><br />
+                <iframe id="cameraFrame" src={this.getHost()}></iframe>
             </div>
         </>
     }

@@ -99,7 +99,9 @@ span:hover {
 
 #compassBox {
   display: inline-block;
+  position: relative;
   width: 96.6%;
+  margin: 0 auto;
 }
 
 .ledInnerBlock {
@@ -107,9 +109,33 @@ span:hover {
   display: inline-block;
 }
 
-iframe {
+#gpsFrame {
+  height: 500px; 
+  width: 700px;
+  border: 0;
+  margin-bottom: 30px;
+}
+
+#cameraFrame {
   height: 500px; 
   width: 700px;
   border: 0;
   transform: rotate(180deg);
+  margin-bottom: 30px;
+}
+
+#compassScaleImage {
+  z-index: 1;
+  width: 400px;
+  margin-bottom: 30px;
+}
+
+#compassHandImage {
+  z-index: 2;
+  position: absolute;
+  top: 57.7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  width: 80px;
 }
