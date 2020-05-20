@@ -65,24 +65,25 @@ class LoginComponent extends Component {
     {
         return (
             <>
-                <br /><br />
+                <div id="loginContainer">
                     <div className="myBox">
-                    <form>
-                    <div className="form-group">
-                            <label>Host and port</label>
-                            <input maxLength="30" type="text" className="form-control" id="logHost" placeholder="Enter host" /><br />
-                            <input maxLength="5" type="text" className="form-control" id="logPort" placeholder="Enter port" />
-                        </div>
-                        <div className="form-group">
-                            <label>Username</label>
-                            <input maxLength="30" type="text" className="form-control" id="logLogin" placeholder="Enter your username" />
-                        </div>
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input maxLength="400" type="password" className="form-control" id="logPassword" placeholder="Enter your password" />
-                        </div>
-                        <input type="submit" value="Login" className="btn btn-primary" onClick={this.login} />
-                    </form>
+                        <form>
+                            <div className="form-group">
+                                <label>Host and port</label>
+                                <input maxLength="30" type="text" className="form-control" id="logHost" placeholder="Enter host" /><br />
+                                <input maxLength="5" type="text" className="form-control" id="logPort" placeholder="Enter port" />
+                            </div>
+                            <div className="form-group">
+                                <label>Username</label>
+                                <input maxLength="30" type="text" className="form-control" id="logLogin" placeholder="Enter your username" />
+                            </div>
+                            <div className="form-group">
+                                <label>Password</label>
+                                <input maxLength="400" type="password" className="form-control" id="logPassword" placeholder="Enter your password" />
+                            </div>
+                            <input type="submit" value="Login" className="btn btn-primary" onClick={this.login} />
+                        </form>
+                    </div>
                 </div>
             </>
         )

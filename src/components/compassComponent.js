@@ -13,7 +13,7 @@ class CompassComponent extends Component {
     }
 
     componentDidMount() {
-        this.timer = setInterval(this.setAngle, 1000)
+        this.timer = setInterval(this.setAngle, 2000)
     }
 
     componentWillUnmount() {

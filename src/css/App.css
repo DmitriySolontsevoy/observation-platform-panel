@@ -7,7 +7,7 @@
 .myBox {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
-  width: 20%;
+  width: 30%;
   padding: 50px;
   margin: auto;
   background-color: white
@@ -101,7 +101,7 @@ span:hover {
   display: inline-block;
   position: relative;
   width: 96.6%;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 .ledInnerBlock {
@@ -138,4 +138,8 @@ span:hover {
   transform: translate(-50%, -50%);
   transform-origin: center center;
   width: 80px;
+}
+
+#loginContainer {
+  padding: 11%;
 }
